@@ -5,6 +5,12 @@ date:   2023-11-03
 categories: Play Pong
 ---
 <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   .game-container {
     display: flex;
     flex-direction: column;
@@ -17,6 +23,7 @@ categories: Play Pong
     margin: 0 auto;
   }
 </style>
+
 <div class="game-container">
   <h1>Play Pong</h1>
   
