@@ -30,5 +30,35 @@ layout: default
 
     <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
   {%- endif -%}
-
+  
+  <div class="dark-mode-toggle">
+    <label>
+      <input type="checkbox" id="dark-mode-toggle-checkbox">
+      Dark Mode
+    </label>
+  </div>
 </div>
+
+<script>
+  // JavaScript code for dark mode toggle
+  const themeToggle = document.getElementById("dark-mode-toggle-checkbox");
+  const themeStylesheet = document.getElementById("theme-stylesheet");
+
+  // Check if user has a preferred theme in local storage
+  const userTheme = localStorage.getItem("preferred-theme");
+  if (userTheme) {
+    themeStylesheet.setAttribute("href", `/path/to/${userTheme}-mode.css`);
+    themeToggle.checked = userTheme === "dark";
+  }
+
+  // Toggle between light and dark mode
+  themeToggle.addEventListener("change", () => {
+    if (themeToggle.checked) {
+      themeStylesheet.setAttribute("href", "/path/to/dark-mode.css");
+      localStorage.setItem("preferred-theme", "dark");
+    } else {
+      themeStylesheet.setAttribute("href", "/path/to/light-mode.css");
+      localStorage.setItem("preferred-theme", "light");
+    }
+  });
+</script>
