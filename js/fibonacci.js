@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scale = 200;
     let x = 200; // Adjust these based on your container size
     let y = 200; // Adjust these based on your container size
-    let angle = 2;
+    let angle = 0;
 
     function drawNextLine() {
       context.beginPath();
@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
       y += scale * Math.sin(angle);
       context.lineTo(x, y);
       context.stroke();
+
+      console.log(x + ", " + y); // Corrected console.log statement
 
       // Calculate the next Fibonacci number
       const c = a + b;
