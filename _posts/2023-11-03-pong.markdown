@@ -42,7 +42,7 @@ categories: Play Pong
     let ball;
 
     function setup() {
-      createCanvas(800, 400);
+      createCanvas(400, 400);
       
       // Matter.js engine and world setup
       engine = Engine.create();
