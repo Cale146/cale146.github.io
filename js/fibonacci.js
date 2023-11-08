@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const fibonacciColors = ["#ff5733", "#33ff57", "#5733ff", "#ff3357", "#57ff33"];
 
   function drawFibonacciSpiral(n) {
-    console.log("drawing...");
+    //console.log("drawing...");
     let a = 0;
     let b = 1;
     let temp;
-    const scale = 10;
+    const scale = 50;
     let x = 200; // Adjust these based on your container size
     let y = 200; // Adjust these based on your container size
     let angle = 0;
 
     for (let i = 0; i < n; i++) {
-      console.log(i);
+      //console.log(i);
       context.beginPath();
       context.strokeStyle = fibonacciColors[i % fibonacciColors.length];
       context.lineWidth = 2;
@@ -39,6 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Use requestAnimationFrame to ensure proper setup before drawing
   requestAnimationFrame(function () {
-    drawFibonacciSpiral(10); // Adjust the number of iterations as needed
+    drawFibonacciSpiral(30); // Adjust the number of iterations as needed
   });
 });
