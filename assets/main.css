@@ -382,6 +382,12 @@ table {
   height:650px;
 }
 
+#fibonacci-container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+}
+
 /**
  * Syntax highlighting styles
  */

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const fibonacciColors = ["#ff5733", "#33ff57", "#5733ff", "#ff3357", "#57ff33"];
 
   function drawFibonacciSpiral(n) {
+    console.log("drawing...");
     let a = 0;
     let b = 1;
     let temp;
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const scale = 10;
 
     for (let i = 0; i < n; i++) {
+      console.log(i);
       context.beginPath();
       context.strokeStyle = fibonacciColors[i % fibonacciColors.length];
       context.lineWidth = 2;
