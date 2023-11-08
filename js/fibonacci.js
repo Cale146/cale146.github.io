@@ -8,37 +8,31 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("drawing...");
     let a = 0;
     let b = 1;
-    let temp;
-    const scale = 200;
-    let x = 200; // Adjust these based on your container size
-    let y = 200; // Adjust these based on your container size
-    let angle = 0;
-    let colorCounter = 0; // Initialize a separate color counter
+    const goldenRatio = 1.61803398875;
+    const scale = 5;
+    let x = container.width / 2; // Start at the center of the container
+    let y = container.height / 2; // Start at the center of the container
 
     function drawNextLine() {
       context.beginPath();
-      context.strokeStyle = fibonacciColors[colorCounter % fibonacciColors.length];
+      context.strokeStyle = fibonacciColors[n % fibonacciColors.length];
       context.lineWidth = 2;
 
       // Draw a line
       context.moveTo(x, y);
-      x += scale * Math.cos(angle);
-      y += scale * Math.sin(angle);
+      x += scale * goldenRatio ** (n - 1) * Math.cos(2 * Math.PI * n / goldenRatio);
+      y += scale * goldenRatio ** (n - 1) * Math.sin(2 * Math.PI * n / goldenRatio);
       context.lineTo(x, y);
       context.stroke();
 
-      console.log(x + ", " + y); // Corrected console.log statement
+      console.log(x + ", " + y); // Log coordinates
 
       // Calculate the next Fibonacci number
       const c = a + b;
       a = b;
       b = c;
 
-      // Update the angle for the next iteration
-      angle += Math.PI / 2;
-
       n--;
-      colorCounter++; // Increment the color counter
 
       if (n > 0) {
         setTimeout(drawNextLine, delay);
@@ -49,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     drawNextLine();
   }
+
+  // Set the canvas size
+  container.width = 400; // Adjust the canvas width as needed
+  container.height = 400; // Adjust the canvas height as needed
 
   // Adjust the number of iterations and delay as needed
   drawFibonacciSpiral(30, 500); // 30 iterations with a 500 ms delay between lines
