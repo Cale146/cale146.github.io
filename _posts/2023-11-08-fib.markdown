@@ -5,4 +5,4 @@ date:   2023-11-08
 categories: The Fibonacci Sequence
 ---
 <div id="fibonacci-container"></div>
-<script src="../js/fibonacci.js"></script>
+<script src="/the/fibonacci/sequence/2023/11/js/fibonacci.js"></script>
