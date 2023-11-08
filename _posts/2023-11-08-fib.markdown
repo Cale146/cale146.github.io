@@ -4,5 +4,5 @@ title:  "Fibonacci"
 date:   2023-11-08
 categories: The Fibonacci Sequence
 ---
-<div id="fibonacci-container"></div>
+<canvas id="fibonacci-container"></canvas>
 <script src="/js/fibonacci.js"></script>
