@@ -13,10 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let x = 200; // Adjust these based on your container size
     let y = 200; // Adjust these based on your container size
     let angle = 0;
+    let colorCounter = 0; // Initialize a separate color counter
 
     function drawNextLine() {
       context.beginPath();
-      context.strokeStyle = fibonacciColors[n % fibonacciColors.length];
+      context.strokeStyle = fibonacciColors[colorCounter % fibonacciColors.length];
       context.lineWidth = 2;
 
       // Draw a line
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       angle += Math.PI / 2;
 
       n--;
+      colorCounter++; // Increment the color counter
 
       if (n > 0) {
         setTimeout(drawNextLine, delay);
@@ -49,5 +51,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Adjust the number of iterations and delay as needed
-  drawFibonacciSpiral(30, 500); // 10 iterations with a 500 ms delay between lines
+  drawFibonacciSpiral(30, 500); // 30 iterations with a 500 ms delay between lines
 });
